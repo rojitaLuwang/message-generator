@@ -13,6 +13,7 @@ function generateMessages(){
     messages.push(greetings[generateRandomNumber(4)]);
     messages.push('Quote of the day: ' + quotes[generateRandomNumber(5)]);
     messages.push('Something to laugh: ' + laugh[generateRandomNumber(5)]);
+    messages.push(String.fromCodePoint(emojis[generateRandomNumber(20)]));
     return messages;
     
 }
@@ -41,10 +42,23 @@ const laugh = [
     "I went to buy some camo pants but couldn't find any."
 ];
 
+//ascii art
+const person = [
+    "   O   ",
+    " / H \\ ",
+    " / ' \\ "
+];
+
+//emojis
+const emojis = [0x1F600, 0x1F604, 0x1F34A, 0x1F344, 0x1F37F, 0x1F363, 0x1F370, 0x1F355,
+    0x1F354, 0x1F35F, 0x1F6C0, 0x1F48E, 0x1F5FA, 0x23F0, 0x1F579, 0x1F4DA,
+    0x1F431, 0x1F42A, 0x1F439, 0x1F424];
+
 function formattedMessage(message){
     for(let i=0; i<message.length; i++){
         console.log(message[i]+ '\n');
     }
+    console.log(person.join('\n'));
 }
 
 formattedMessage(generateMessages());
